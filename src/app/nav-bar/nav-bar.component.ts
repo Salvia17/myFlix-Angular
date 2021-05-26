@@ -17,6 +17,9 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This will log the use out and redirect them to wolcome page
+   */
   logoutUser(): void {
     localStorage.clear();
     this.router.navigate(['welcome']);

@@ -8,6 +8,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class GenreDialogComponent implements OnInit {
 
+  /**
+   * This will inject genre name and description to class
+   * at movie-card component and will be used in dialog to view genre
+   * @param data 
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA)
 

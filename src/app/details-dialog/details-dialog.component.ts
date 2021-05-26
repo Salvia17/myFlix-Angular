@@ -8,6 +8,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DetailsDialogComponent implements OnInit {
 
+  /**
+   * This will inject movie's name, image path, description, director and genre to class
+   * at movie-card component and will be used in dialog to view movie's details
+   * @param data 
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA)
 

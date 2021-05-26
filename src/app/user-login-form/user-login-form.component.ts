@@ -23,6 +23,10 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This function will send form input to the backend, and after login
+   * will display movie cards
+   */
   userLogin(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       this.dialogRef.close(); // This will close the modal on success!

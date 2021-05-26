@@ -21,6 +21,9 @@ export class UpdateProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This will send updated user info to backend and will refresh the window to reflect the changes
+   */
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((response) => {
       // logic for a successful user edit goes here

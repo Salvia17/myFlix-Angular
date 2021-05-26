@@ -24,10 +24,16 @@ export class MovieCardComponent implements OnInit {
     public dialog: MatDialog,
     public snackBar: MatSnackBar) { }
 
+  /**
+   * This will run getMovies() function on initialization
+   */
   ngOnInit(): void {
     this.getMovies();
   }
 
+  /**
+   * This gets all movies and stores them in array
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -36,6 +42,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * This function will open a dialog with director's info
+   * @param name 
+   * @param bio 
+   * @param birth 
+   */
   showDirectorDialog(name: string, bio: string, birth: Date): void {
     this.dialog.open(DirectorDialogComponent, {
       data: { name, bio, birth },
@@ -43,6 +55,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * This function will open a dialog with movie genre's info
+   * @param name 
+   * @param description 
+   */
   showGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreDialogComponent, {
       data: { name, description },
@@ -50,6 +67,14 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * This function will open a dialog with movie's info
+   * @param title 
+   * @param imagepath 
+   * @param description 
+   * @param director 
+   * @param genre 
+   */
   showDetailsDialog(title: string, imagepath: string, description: string, director: string, genre: string): void {
     this.dialog.open(DetailsDialogComponent, {
       data: { title, imagepath, description, director, genre },
@@ -57,6 +82,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * This function adds movie to user's favorites
+   * @param id 
+   * @param title 
+   */
   addFavorite(id: string, title: string): void {
     this.fetchApiData2.addFavoriteMovie(id).subscribe(() => {
       this.snackBar.open(`${title} has been added to your favorites!`, 'OK', {

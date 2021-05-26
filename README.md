@@ -1,6 +1,20 @@
 # MyFlixAngularClient
 
+## Overview
+
+This is the last project created for web developemnt courses taken with CareerFoundry. This is a front-end of the movie app called myFlix, but this time developed using Angular.
+
+### View it live [HERE](https://salvia17.github.io/myFlix-Angular/welcome)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+
+## Technologies:
+- Angular
+- TypeScript
+- node.js
+- npm
+- Angular Material
+- TypeDoc
 
 ## Development server
 
